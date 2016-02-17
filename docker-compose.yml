@@ -1,0 +1,11 @@
+web:
+  image: java:8
+  command: java -jar /app/app.jar
+  ports:
+    - "4567:4567"
+  volumes:
+    - ./build/libs/spark-intro-1.0-SNAPSHOT-all.jar:/app/app.jar
+  links:
+    - mongo
+mongo:
+ image: mongo
